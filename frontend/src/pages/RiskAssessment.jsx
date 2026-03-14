@@ -147,7 +147,7 @@ const RiskAssessment = () => {
                                     </div>
                                     <div className="w-full bg-gray-200 dark:bg-white/10 h-1.5 rounded-full">
                                         <div
-                                            className="bg-cyan-500 h-1.5 rounded-full transition-all duration-300"
+                                            className="bg-emerald-500 h-1.5 rounded-full transition-all duration-300"
                                             style={{ width: `${((step + 1) / questions.length) * 100}%` }}
                                         />
                                     </div>
@@ -164,12 +164,12 @@ const RiskAssessment = () => {
                                             onClick={() => handleOptionSelect(option.score)}
                                             className={`w-full p-4 rounded-xl text-left border transition-all duration-200 flex justify-between items-center group
                                                 ${answers[step] === option.score
-                                                    ? 'border-cyan-500 bg-cyan-50 dark:bg-cyan-500/10 text-cyan-700 dark:text-neon-cyan shadow-[0_0_15px_rgba(34,211,238,0.2)]'
-                                                    : 'border-gray-200 dark:border-white/10 hover:border-cyan-500/50 hover:bg-gray-50 dark:hover:bg-white/5 text-gray-700 dark:text-gray-300'
+                                                    ? 'border-emerald-500 bg-emerald-50 dark:bg-emerald-500/10 text-emerald-700 dark:text-neon-emerald shadow-[0_0_15px_rgba(16, 185, 129, 0.2)]'
+                                                    : 'border-gray-200 dark:border-white/10 hover:border-emerald-500/50 hover:bg-gray-50 dark:hover:bg-white/5 text-gray-700 dark:text-gray-300'
                                                 }`}
                                         >
                                             <span className="font-medium">{option.text}</span>
-                                            {answers[step] === option.score && <CheckCircle className="w-5 h-5 text-cyan-500" />}
+                                            {answers[step] === option.score && <CheckCircle className="w-5 h-5 text-emerald-500" />}
                                         </button>
                                     ))}
                                 </div>
@@ -192,7 +192,7 @@ const RiskAssessment = () => {
                                         className={`px-8 py-3 rounded-lg font-bold transition-all flex items-center gap-2 shadow-lg
                                             ${!answers[step]
                                                 ? 'bg-gray-200 dark:bg-white/10 text-gray-400 cursor-not-allowed'
-                                                : 'bg-gradient-to-r from-cyan-600 to-blue-600 text-white hover:shadow-cyan-500/25 transform hover:-translate-y-0.5'
+                                                : 'bg-gradient-to-r from-emerald-600 to-blue-600 text-white hover:shadow-emerald-500/25 transform hover:-translate-y-0.5'
                                             }`}
                                     >
                                         {step === questions.length - 1 ? t('see_results') : t('next')} <ArrowRight className="w-4 h-4" />
@@ -238,7 +238,7 @@ const RiskAssessment = () => {
 
                                     <div className="space-y-6">
                                         <div>
-                                            <h3 className="text-2xl font-bold text-cyan-600 dark:text-neon-cyan mb-2">
+                                            <h3 className="text-2xl font-bold text-emerald-600 dark:text-neon-emerald mb-2">
                                                 {riskProfile.label} Investor
                                             </h3>
                                             <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
@@ -271,7 +271,7 @@ const RiskAssessment = () => {
 
                                         <button
                                             onClick={() => window.location.reload()}
-                                            className="w-full mt-4 glass-btn py-3 rounded-xl font-semibold text-cyan-900 dark:text-white"
+                                            className="w-full mt-4 glass-btn py-3 rounded-xl font-semibold text-emerald-900 dark:text-white"
                                         >
                                             {t('retake_assessment')}
                                         </button>

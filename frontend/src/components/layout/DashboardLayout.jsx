@@ -14,7 +14,7 @@ const DashboardLayout = ({ children }) => {
             {/* Mobile Header & Sidebar Overlay */}
             <div className="md:hidden fixed top-0 left-0 right-0 z-50 bg-white dark:bg-fintech-bg border-b border-gray-200 dark:border-white/10 px-4 py-3 flex items-center justify-between transition-colors duration-300">
                 <span className="text-xl font-bold tracking-wide text-gray-900 dark:text-white">
-                    <span className="text-neon-cyan">Cresta</span>
+                    <span className="text-neon-emerald">Cresta</span>
                 </span>
                 <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="p-2 text-gray-600 dark:text-gray-300">
                     {isMobileMenuOpen ? <X /> : <Menu />}
@@ -26,7 +26,7 @@ const DashboardLayout = ({ children }) => {
             {isMobileMenuOpen && (
                 <div className="fixed inset-0 z-40 bg-gray-50 dark:bg-fintech-bg pt-16 px-4 md:hidden transition-colors duration-300">
                     <nav className="flex flex-col space-y-4">
-                        <a href="/dashboard" className="text-lg font-medium text-cyan-600 dark:text-neon-cyan">Portfolio</a>
+                        <a href="/dashboard" className="text-lg font-medium text-emerald-600 dark:text-neon-emerald">Portfolio</a>
                         <a href="/markets" className="text-lg font-medium text-gray-600 dark:text-gray-400">Market Watch</a>
                         <a href="/risk" className="text-lg font-medium text-gray-600 dark:text-gray-400">Risk Assessment</a>
                         <a href="/settings" className="text-lg font-medium text-gray-600 dark:text-gray-400">Settings</a>
@@ -39,7 +39,7 @@ const DashboardLayout = ({ children }) => {
                 {/* Background Orbs */}
                 <div className="absolute top-0 left-0 w-full h-full pointer-events-none z-0 overflow-hidden">
                     <div className="absolute top-[-5%] right-[10%] w-[30%] h-[30%] bg-neon-blue/5 rounded-full blur-[100px]"></div>
-                    <div className="absolute bottom-[10%] left-[5%] w-[25%] h-[25%] bg-neon-cyan/5 rounded-full blur-[80px]"></div>
+                    <div className="absolute bottom-[10%] left-[5%] w-[25%] h-[25%] bg-neon-emerald/5 rounded-full blur-[80px]"></div>
                 </div>
 
                 <Header />

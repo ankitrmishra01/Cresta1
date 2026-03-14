@@ -40,7 +40,7 @@ const HoldingsTable = () => {
         >
             <div className="p-6 border-b border-gray-200 dark:border-white/10 flex justify-between items-center">
                 <h3 className="text-xl font-bold text-gray-900 dark:text-white">{t('holdings', 'Holdings')}</h3>
-                <button className="text-sm text-cyan-600 dark:text-neon-cyan font-medium hover:underline">
+                <button className="text-sm text-emerald-600 dark:text-neon-emerald font-medium hover:underline">
                     View All
                 </button>
             </div>
@@ -49,7 +49,7 @@ const HoldingsTable = () => {
                 <table className="w-full">
                     <thead className="bg-gray-50/50 dark:bg-white/5 text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider">
                         <tr>
-                            <th className="px-6 py-4 text-left cursor-pointer hover:text-cyan-600 dark:hover:text-neon-cyan transition-colors" onClick={() => sortData('name')}>
+                            <th className="px-6 py-4 text-left cursor-pointer hover:text-emerald-600 dark:hover:text-neon-emerald transition-colors" onClick={() => sortData('name')}>
                                 <div className="flex items-center gap-2">Instrument <ArrowUpDown className="w-3 h-3" /></div>
                             </th>
                             <th className="px-6 py-4 text-right">Qty</th>

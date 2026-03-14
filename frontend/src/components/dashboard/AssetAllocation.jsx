@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 const AssetAllocation = ({ delay }) => {
     const { t } = useTranslation();
     const assets = [
-        { name: 'Stocks', value: 55, color: '#22D3EE' }, // Neon Cyan
+        { name: 'Stocks', value: 55, color: '#10B981' }, // Neon Emerald
         { name: 'Bonds', value: 30, color: '#3B82F6' }, // Neon Blue
         { name: 'Crypto', value: 15, color: '#34D399' }, // Neon Emerald
     ];

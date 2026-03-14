@@ -8,7 +8,7 @@ import BackgroundEffects from '../components/common/BackgroundEffects';
 
 const LandingPage = () => {
     return (
-        <div className="min-h-screen selection:bg-cyan-300/30 dark:selection:bg-neon-cyan/30 transition-colors duration-300">
+        <div className="min-h-screen selection:bg-emerald-300/30 dark:selection:bg-neon-emerald/30 transition-colors duration-300">
             <BackgroundEffects />
 
             <Navbar />

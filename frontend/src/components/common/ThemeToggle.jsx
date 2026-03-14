@@ -9,7 +9,7 @@ const ThemeToggle = () => {
     return (
         <button
             onClick={toggleTheme}
-            className="relative p-2 rounded-full bg-gray-200 dark:bg-white/10 hover:bg-gray-300 dark:hover:bg-white/20 transition-colors focus:outline-none focus:ring-2 focus:ring-neon-cyan"
+            className="relative p-2 rounded-full bg-gray-200 dark:bg-white/10 hover:bg-gray-300 dark:hover:bg-white/20 transition-colors focus:outline-none focus:ring-2 focus:ring-neon-emerald"
             aria-label="Toggle Theme"
         >
             <AnimatePresence mode="wait" initial={false}>
@@ -21,7 +21,7 @@ const ThemeToggle = () => {
                     transition={{ duration: 0.2 }}
                 >
                     {theme === 'dark' ? (
-                        <Moon className="w-5 h-5 text-neon-cyan" />
+                        <Moon className="w-5 h-5 text-neon-emerald" />
                     ) : (
                         <Sun className="w-5 h-5 text-yellow-500" />
                     )}

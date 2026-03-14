@@ -8,7 +8,7 @@ const Features = () => {
 
     const features = [
         {
-            icon: <Shield className="w-8 h-8 text-cyan-600 dark:text-neon-cyan" />,
+            icon: <Shield className="w-8 h-8 text-emerald-600 dark:text-neon-emerald" />,
             title: t('feature_risk_profiling_title'),
             description: t('feature_risk_profiling_desc')
         },
@@ -43,12 +43,12 @@ const Features = () => {
                             transition={{ duration: 0.5, delay: index * 0.2 }}
                             viewport={{ once: true }}
                             whileHover={{ y: -10 }}
-                            className="glass-panel p-8 rounded-2xl hover:border-cyan-500/30 dark:hover:border-neon-cyan/30 transition-colors group cursor-pointer"
+                            className="glass-panel p-8 rounded-2xl hover:border-emerald-500/30 dark:hover:border-neon-emerald/30 transition-colors group cursor-pointer"
                         >
                             <div className="mb-6 p-4 rounded-full bg-blue-50 dark:bg-white/5 w-fit group-hover:bg-blue-100 dark:group-hover:bg-white/10 transition-colors">
                                 {feature.icon}
                             </div>
-                            <h3 className="text-xl font-bold mb-4 group-hover:text-cyan-600 dark:group-hover:text-neon-cyan transition-colors">{feature.title}</h3>
+                            <h3 className="text-xl font-bold mb-4 group-hover:text-emerald-600 dark:group-hover:text-neon-emerald transition-colors">{feature.title}</h3>
                             <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
                                 {feature.description}
                             </p>

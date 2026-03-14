@@ -34,7 +34,7 @@ const SettingsPage = () => {
                     {/* Settings Navigation (Optional, for larger screens) */}
                     <div className="hidden md:block col-span-1 space-y-2">
                         <nav className="flex flex-col gap-1 sticky top-24">
-                            <a href="#profile" className="px-4 py-3 rounded-xl bg-cyan-50 dark:bg-neon-cyan/10 text-cyan-600 dark:text-neon-cyan font-medium flex items-center justify-between">
+                            <a href="#profile" className="px-4 py-3 rounded-xl bg-emerald-50 dark:bg-neon-emerald/10 text-emerald-600 dark:text-neon-emerald font-medium flex items-center justify-between">
                                 <div className="flex items-center gap-3">
                                     <User size={18} />
                                     <span>{t('profile') || 'Profile'}</span>
@@ -70,13 +70,13 @@ const SettingsPage = () => {
                         >
                             <div className="p-6 border-b border-gray-200 dark:border-white/10">
                                 <h2 className="text-xl font-semibold text-gray-900 dark:text-white flex items-center gap-2">
-                                    <User className="text-cyan-500" size={20} />
+                                    <User className="text-emerald-500" size={20} />
                                     {t('profile_settings') || 'Profile Settings'}
                                 </h2>
                             </div>
                             <div className="p-6 space-y-6">
                                 <div className="flex items-center gap-6">
-                                    <div className="w-20 h-20 rounded-full bg-gradient-to-tr from-cyan-500 to-blue-500 flex items-center justify-center text-white text-3xl font-bold shadow-lg">
+                                    <div className="w-20 h-20 rounded-full bg-gradient-to-tr from-emerald-500 to-blue-500 flex items-center justify-center text-white text-3xl font-bold shadow-lg">
                                         {user?.name?.charAt(0) || 'U'}
                                     </div>
                                     <div>
@@ -120,7 +120,7 @@ const SettingsPage = () => {
                         >
                             <div className="p-6 border-b border-gray-200 dark:border-white/10">
                                 <h2 className="text-xl font-semibold text-gray-900 dark:text-white flex items-center gap-2">
-                                    {theme === 'dark' ? <Moon className="text-cyan-500" size={20} /> : <Sun className="text-emerald-500" size={20} />}
+                                    {theme === 'dark' ? <Moon className="text-emerald-500" size={20} /> : <Sun className="text-emerald-500" size={20} />}
                                     {t('appearance') || 'Appearance'}
                                 </h2>
                             </div>
@@ -133,12 +133,12 @@ const SettingsPage = () => {
                                     <button
                                         onClick={() => theme === 'dark' && toggleTheme()}
                                         className={`flex flex-col items-center p-6 rounded-xl border-2 transition-all duration-200 ${theme === 'light'
-                                                ? 'border-cyan-500 bg-cyan-50 dark:bg-cyan-900/20'
-                                                : 'border-gray-200 dark:border-white/10 hover:border-cyan-300 dark:hover:border-cyan-700 focus:outline-none'
+                                                ? 'border-emerald-500 bg-emerald-50 dark:bg-emerald-900/20'
+                                                : 'border-gray-200 dark:border-white/10 hover:border-emerald-300 dark:hover:border-emerald-700 focus:outline-none'
                                             }`}
                                     >
-                                        <Sun size={32} className={`mb-3 ${theme === 'light' ? 'text-cyan-500' : 'text-gray-400'}`} />
-                                        <span className={`font-medium ${theme === 'light' ? 'text-cyan-700 dark:text-cyan-300' : 'text-gray-600 dark:text-gray-400'}`}>
+                                        <Sun size={32} className={`mb-3 ${theme === 'light' ? 'text-emerald-500' : 'text-gray-400'}`} />
+                                        <span className={`font-medium ${theme === 'light' ? 'text-emerald-700 dark:text-emerald-300' : 'text-gray-600 dark:text-gray-400'}`}>
                                             {t('light_mode') || 'Light Mode'}
                                         </span>
                                     </button>
@@ -146,11 +146,11 @@ const SettingsPage = () => {
                                     <button
                                         onClick={() => theme === 'light' && toggleTheme()}
                                         className={`flex flex-col items-center p-6 rounded-xl border-2 transition-all duration-200 ${theme === 'dark'
-                                                ? 'border-neon-cyan bg-neon-cyan/10'
-                                                : 'border-gray-200 dark:border-white/10 hover:border-cyan-300 dark:hover:border-cyan-700 focus:outline-none'
+                                                ? 'border-neon-emerald bg-neon-emerald/10'
+                                                : 'border-gray-200 dark:border-white/10 hover:border-emerald-300 dark:hover:border-emerald-700 focus:outline-none'
                                             }`}
                                     >
-                                        <Moon size={32} className={`mb-3 ${theme === 'dark' ? 'text-neon-cyan' : 'text-gray-400'}`} />
+                                        <Moon size={32} className={`mb-3 ${theme === 'dark' ? 'text-neon-emerald' : 'text-gray-400'}`} />
                                         <span className={`font-medium ${theme === 'dark' ? 'text-white' : 'text-gray-600 dark:text-gray-400'}`}>
                                             {t('dark_mode') || 'Dark Mode'}
                                         </span>
@@ -184,13 +184,13 @@ const SettingsPage = () => {
                                             key={lang.code}
                                             onClick={() => changeLanguage(lang.code)}
                                             className={`w-full flex items-center justify-between p-4 rounded-xl border transition-all duration-200 ${i18n.language === lang.code
-                                                    ? 'border-cyan-500 bg-cyan-50 dark:bg-cyan-900/20 shadow-sm'
+                                                    ? 'border-emerald-500 bg-emerald-50 dark:bg-emerald-900/20 shadow-sm'
                                                     : 'border-gray-200 dark:border-white/10 hover:bg-gray-50 dark:hover:bg-white/5 focus:outline-none'
                                                 }`}
                                         >
                                             <div className="flex items-center gap-4">
                                                 <div className={`w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm ${i18n.language === lang.code
-                                                        ? 'bg-cyan-100 text-cyan-600 dark:bg-cyan-800 dark:text-cyan-200'
+                                                        ? 'bg-emerald-100 text-emerald-600 dark:bg-emerald-800 dark:text-emerald-200'
                                                         : 'bg-gray-100 text-gray-500 dark:bg-gray-800 dark:text-gray-400'
                                                     }`}>
                                                     {lang.code.toUpperCase()}
@@ -205,7 +205,7 @@ const SettingsPage = () => {
                                                 </div>
                                             </div>
                                             {i18n.language === lang.code && (
-                                                <Check className="text-cyan-500" size={20} />
+                                                <Check className="text-emerald-500" size={20} />
                                             )}
                                         </button>
                                     ))}

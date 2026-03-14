@@ -8,9 +8,9 @@ const Footer = () => {
             <div className="container mx-auto px-6 text-center text-gray-600 dark:text-gray-500">
                 <p>&copy; {new Date().getFullYear()} Cresta AI. {t('rights_reserved')}</p>
                 <div className="flex justify-center space-x-6 mt-4">
-                    <a href="#" className="hover:text-cyan-600 dark:hover:text-neon-cyan transition-colors">{t('privacy_policy')}</a>
-                    <a href="#" className="hover:text-cyan-600 dark:hover:text-neon-cyan transition-colors">{t('terms_of_service')}</a>
-                    <a href="#" className="hover:text-cyan-600 dark:hover:text-neon-cyan transition-colors">{t('contact')}</a>
+                    <a href="#" className="hover:text-emerald-600 dark:hover:text-neon-emerald transition-colors">{t('privacy_policy')}</a>
+                    <a href="#" className="hover:text-emerald-600 dark:hover:text-neon-emerald transition-colors">{t('terms_of_service')}</a>
+                    <a href="#" className="hover:text-emerald-600 dark:hover:text-neon-emerald transition-colors">{t('contact')}</a>
                 </div>
             </div>
         </footer>

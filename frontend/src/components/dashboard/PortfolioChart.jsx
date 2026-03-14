@@ -25,7 +25,7 @@ const PortfolioChart = ({ delay }) => {
         >
             <div className="flex justify-between items-center mb-6">
                 <h3 className="text-lg font-bold text-white">{t('portfolio_growth')}</h3>
-                <select className="bg-white/5 border border-white/10 rounded-lg text-xs px-3 py-1.5 text-gray-300 focus:outline-none focus:border-neon-cyan/50">
+                <select className="bg-white/5 border border-white/10 rounded-lg text-xs px-3 py-1.5 text-gray-300 focus:outline-none focus:border-neon-emerald/50">
                     <option>Last 7 Days</option>
                     <option>Last Month</option>
                     <option>YTD</option>
@@ -48,8 +48,8 @@ const PortfolioChart = ({ delay }) => {
                     >
                         <defs>
                             <linearGradient id="colorValue" x1="0" y1="0" x2="0" y2="1">
-                                <stop offset="5%" stopColor="#22D3EE" stopOpacity={0.3} />
-                                <stop offset="95%" stopColor="#22D3EE" stopOpacity={0} />
+                                <stop offset="5%" stopColor="#10B981" stopOpacity={0.3} />
+                                <stop offset="95%" stopColor="#10B981" stopOpacity={0} />
                             </linearGradient>
                         </defs>
                         <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="rgba(255,255,255,0.1)" />
@@ -71,14 +71,14 @@ const PortfolioChart = ({ delay }) => {
                                 borderRadius: '12px',
                                 boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)',
                             }}
-                            itemStyle={{ color: '#22D3EE' }}
+                            itemStyle={{ color: '#10B981' }}
                             labelStyle={{ color: '#9CA3AF', marginBottom: '4px' }}
                             formatter={(value) => [`₹${value.toLocaleString()}`, 'Value']}
                         />
                         <Area
                             type="monotone"
                             dataKey="value"
-                            stroke="#22D3EE"
+                            stroke="#10B981"
                             strokeWidth={3}
                             fillOpacity={1}
                             fill="url(#colorValue)"

@@ -21,25 +21,25 @@ const LanguageSelector = () => {
                 <div className="py-1">
                     <button
                         onClick={() => changeLanguage('en')}
-                        className={`block w-full text-left px-4 py-2 text-sm hover:bg-white/5 transition-colors ${i18n.language === 'en' ? 'text-neon-cyan' : 'text-gray-300'}`}
+                        className={`block w-full text-left px-4 py-2 text-sm hover:bg-white/5 transition-colors ${i18n.language === 'en' ? 'text-neon-emerald' : 'text-gray-300'}`}
                     >
                         English
                     </button>
                     <button
                         onClick={() => changeLanguage('hi')}
-                        className={`block w-full text-left px-4 py-2 text-sm hover:bg-white/5 transition-colors ${i18n.language === 'hi' ? 'text-neon-cyan' : 'text-gray-300'}`}
+                        className={`block w-full text-left px-4 py-2 text-sm hover:bg-white/5 transition-colors ${i18n.language === 'hi' ? 'text-neon-emerald' : 'text-gray-300'}`}
                     >
                         हिंदी (Hindi)
                     </button>
                     <button
                         onClick={() => changeLanguage('gu')}
-                        className={`block w-full text-left px-4 py-2 text-sm hover:bg-white/5 transition-colors ${i18n.language === 'gu' ? 'text-neon-cyan' : 'text-gray-300'}`}
+                        className={`block w-full text-left px-4 py-2 text-sm hover:bg-white/5 transition-colors ${i18n.language === 'gu' ? 'text-neon-emerald' : 'text-gray-300'}`}
                     >
                         ગુજરાતી (Gujarati)
                     </button>
                     <button
                         onClick={() => changeLanguage('pa')}
-                        className={`block w-full text-left px-4 py-2 text-sm hover:bg-white/5 transition-colors ${i18n.language === 'pa' ? 'text-neon-cyan' : 'text-gray-300'}`}
+                        className={`block w-full text-left px-4 py-2 text-sm hover:bg-white/5 transition-colors ${i18n.language === 'pa' ? 'text-neon-emerald' : 'text-gray-300'}`}
                     >
                         ਪੰਜਾਬੀ (Punjabi)
                     </button>

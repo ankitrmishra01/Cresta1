@@ -54,12 +54,12 @@ const AIInsights = ({ delay }) => {
         >
             <div className="flex items-center justify-between mb-6">
                 <h3 className="text-lg font-bold text-gray-900 dark:text-white flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-cyan-500 dark:bg-neon-cyan animate-pulse"></span>
+                    <span className="w-2 h-2 rounded-full bg-emerald-500 dark:bg-neon-emerald animate-pulse"></span>
                     AI Insights
                     <span className="text-xs font-normal text-gray-500 dark:text-gray-400 ml-2">({insights.length})</span>
                 </h3>
                 {insights.length === 0 && (
-                    <button onClick={() => window.location.reload()} className="text-xs text-cyan-600 dark:text-neon-cyan hover:underline">
+                    <button onClick={() => window.location.reload()} className="text-xs text-emerald-600 dark:text-neon-emerald hover:underline">
                         Refresh
                     </button>
                 )}

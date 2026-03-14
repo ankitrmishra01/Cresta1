@@ -26,7 +26,7 @@ const StatCard = ({ title, value, change, isPositive, icon: Icon, delay }) => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay }}
             whileHover={{ y: -5, transition: { duration: 0.2 } }}
-            className="glass-panel p-6 rounded-2xl relative overflow-hidden group hover:shadow-[0_10px_40px_-10px_rgba(34,211,238,0.2)] hover:border-cyan-400/30 dark:hover:border-neon-cyan/30 transition-all duration-300"
+            className="glass-panel p-6 rounded-2xl relative overflow-hidden group hover:shadow-[0_10px_40px_-10px_rgba(16, 185, 129, 0.2)] hover:border-emerald-400/30 dark:hover:border-neon-emerald/30 transition-all duration-300"
         >
             <div className="flex justify-between items-start mb-4">
                 <div>
@@ -38,7 +38,7 @@ const StatCard = ({ title, value, change, isPositive, icon: Icon, delay }) => {
                         )}
                     </h3>
                 </div>
-                <div className={`p-2.5 rounded-xl ${isPositive ? 'bg-neon-emerald/10 text-neon-emerald' : 'bg-neon-cyan/10 text-neon-cyan'}`}>
+                <div className={`p-2.5 rounded-xl ${isPositive ? 'bg-neon-emerald/10 text-neon-emerald' : 'bg-neon-emerald/10 text-neon-emerald'}`}>
                     <Icon size={20} />
                 </div>
             </div>
@@ -52,7 +52,7 @@ const StatCard = ({ title, value, change, isPositive, icon: Icon, delay }) => {
             </div>
 
             {/* Decorative Glow */}
-            <div className="absolute -right-4 -bottom-4 w-20 h-20 bg-neon-cyan/5 rounded-full blur-2xl group-hover:bg-neon-cyan/10 transition-colors"></div>
+            <div className="absolute -right-4 -bottom-4 w-20 h-20 bg-neon-emerald/5 rounded-full blur-2xl group-hover:bg-neon-emerald/10 transition-colors"></div>
         </motion.div>
     );
 };

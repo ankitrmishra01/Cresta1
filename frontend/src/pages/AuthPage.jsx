@@ -106,13 +106,13 @@ const AuthPage = () => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8 }}
                     >
-                        <div className="h-1 w-12 bg-cyan-600 dark:bg-neon-cyan mb-6 rounded-full"></div>
+                        <div className="h-1 w-12 bg-emerald-600 dark:bg-neon-emerald mb-6 rounded-full"></div>
                         <blockquote className="text-4xl font-light leading-tight mb-6 font-serif text-gray-900 dark:text-white">
                             {isLogin
                                 ? t('quote_buffett')
                                 : t('quote_einstein')}
                         </blockquote>
-                        <cite className="not-italic text-lg text-cyan-600 dark:text-neon-cyan/80">
+                        <cite className="not-italic text-lg text-emerald-600 dark:text-neon-emerald/80">
                             — {isLogin ? "Warren Buffett" : "Albert Einstein"}
                         </cite>
                     </motion.div>
@@ -127,7 +127,7 @@ const AuthPage = () => {
 
                 <div className="absolute inset-0 z-0 lg:hidden">
                     <div className="absolute inset-0 bg-gray-50 dark:bg-fintech-bg transition-colors duration-300"></div>
-                    <div className="absolute top-[-10%] right-[-10%] w-[50%] h-[50%] bg-cyan-500/10 dark:bg-neon-cyan/10 rounded-full blur-[100px]"></div>
+                    <div className="absolute top-[-10%] right-[-10%] w-[50%] h-[50%] bg-emerald-500/10 dark:bg-neon-emerald/10 rounded-full blur-[100px]"></div>
                 </div>
 
                 <motion.div
@@ -154,7 +154,7 @@ const AuthPage = () => {
                                         exit={{ opacity: 0, height: 0 }}
                                         className="relative group"
                                     >
-                                        <User className="absolute left-3 top-3.5 h-5 w-5 text-gray-400 dark:text-gray-500 group-focus-within:text-cyan-600 dark:group-focus-within:text-neon-cyan transition-colors" />
+                                        <User className="absolute left-3 top-3.5 h-5 w-5 text-gray-400 dark:text-gray-500 group-focus-within:text-emerald-600 dark:group-focus-within:text-neon-emerald transition-colors" />
                                         <input
                                             type="text"
                                             name="name"
@@ -162,9 +162,9 @@ const AuthPage = () => {
                                             onChange={handleInputChange}
                                             required={!isLogin}
                                             placeholder=" "
-                                            className="w-full bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-xl px-10 py-3 text-gray-900 dark:text-white outline-none focus:border-cyan-500/50 dark:focus:border-neon-cyan/50 focus:bg-white dark:focus:bg-white/10 transition-all peer"
+                                            className="w-full bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-xl px-10 py-3 text-gray-900 dark:text-white outline-none focus:border-emerald-500/50 dark:focus:border-neon-emerald/50 focus:bg-white dark:focus:bg-white/10 transition-all peer"
                                         />
-                                        <label className="absolute left-10 top-3 text-sm text-gray-500 dark:text-gray-400 transition-all bg-gray-50 dark:bg-fintech-card/50 px-1 ml-[-4px] pointer-events-none peer-focus:-top-2.5 peer-focus:text-xs peer-focus:text-cyan-600 dark:peer-focus:text-neon-cyan peer-[:not(:placeholder-shown)]:-top-2.5 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:text-cyan-600 dark:peer-[:not(:placeholder-shown)]:text-neon-cyan">
+                                        <label className="absolute left-10 top-3 text-sm text-gray-500 dark:text-gray-400 transition-all bg-gray-50 dark:bg-fintech-card/50 px-1 ml-[-4px] pointer-events-none peer-focus:-top-2.5 peer-focus:text-xs peer-focus:text-emerald-600 dark:peer-focus:text-neon-emerald peer-[:not(:placeholder-shown)]:-top-2.5 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:text-emerald-600 dark:peer-[:not(:placeholder-shown)]:text-neon-emerald">
                                             {t('full_name')}
                                         </label>
                                     </motion.div>
@@ -172,7 +172,7 @@ const AuthPage = () => {
                             </AnimatePresence>
 
                             <div className="relative group">
-                                <Mail className="absolute left-3 top-3.5 h-5 w-5 text-gray-400 dark:text-gray-500 group-focus-within:text-cyan-600 dark:group-focus-within:text-neon-cyan transition-colors" />
+                                <Mail className="absolute left-3 top-3.5 h-5 w-5 text-gray-400 dark:text-gray-500 group-focus-within:text-emerald-600 dark:group-focus-within:text-neon-emerald transition-colors" />
                                 <input
                                     type="email"
                                     name="email"
@@ -180,28 +180,28 @@ const AuthPage = () => {
                                     onChange={handleInputChange}
                                     required
                                     placeholder=" "
-                                    className="w-full bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-xl px-10 py-3 text-gray-900 dark:text-white outline-none focus:border-cyan-500/50 dark:focus:border-neon-cyan/50 focus:bg-white dark:focus:bg-white/10 transition-all peer"
+                                    className="w-full bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-xl px-10 py-3 text-gray-900 dark:text-white outline-none focus:border-emerald-500/50 dark:focus:border-neon-emerald/50 focus:bg-white dark:focus:bg-white/10 transition-all peer"
                                 />
-                                <label className="absolute left-10 top-3 text-sm text-gray-500 dark:text-gray-400 transition-all bg-gray-50 dark:bg-fintech-card/50 px-1 ml-[-4px] pointer-events-none peer-focus:-top-2.5 peer-focus:text-xs peer-focus:text-cyan-600 dark:peer-focus:text-neon-cyan peer-[:not(:placeholder-shown)]:-top-2.5 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:text-cyan-600 dark:peer-[:not(:placeholder-shown)]:text-neon-cyan">
+                                <label className="absolute left-10 top-3 text-sm text-gray-500 dark:text-gray-400 transition-all bg-gray-50 dark:bg-fintech-card/50 px-1 ml-[-4px] pointer-events-none peer-focus:-top-2.5 peer-focus:text-xs peer-focus:text-emerald-600 dark:peer-focus:text-neon-emerald peer-[:not(:placeholder-shown)]:-top-2.5 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:text-emerald-600 dark:peer-[:not(:placeholder-shown)]:text-neon-emerald">
                                     {t('email_address')}
                                 </label>
                             </div>
 
                             <div className="relative group">
-                                <Lock className="absolute left-3 top-3.5 h-5 w-5 text-gray-400 dark:text-gray-500 group-focus-within:text-cyan-600 dark:group-focus-within:text-neon-cyan transition-colors" />
+                                <Lock className="absolute left-3 top-3.5 h-5 w-5 text-gray-400 dark:text-gray-500 group-focus-within:text-emerald-600 dark:group-focus-within:text-neon-emerald transition-colors" />
                                 <input
                                     type={showPassword ? "text" : "password"}
                                     required
                                     placeholder=" "
-                                    className="w-full bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-xl pl-10 pr-12 py-3 text-gray-900 dark:text-white outline-none focus:border-cyan-500/50 dark:focus:border-neon-cyan/50 focus:bg-white dark:focus:bg-white/10 transition-all peer"
+                                    className="w-full bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-xl pl-10 pr-12 py-3 text-gray-900 dark:text-white outline-none focus:border-emerald-500/50 dark:focus:border-neon-emerald/50 focus:bg-white dark:focus:bg-white/10 transition-all peer"
                                 />
-                                <label className="absolute left-10 top-3 text-sm text-gray-500 dark:text-gray-400 transition-all bg-gray-50 dark:bg-fintech-card/50 px-1 ml-[-4px] pointer-events-none peer-focus:-top-2.5 peer-focus:text-xs peer-focus:text-cyan-600 dark:peer-focus:text-neon-cyan peer-[:not(:placeholder-shown)]:-top-2.5 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:text-cyan-600 dark:peer-[:not(:placeholder-shown)]:text-neon-cyan">
+                                <label className="absolute left-10 top-3 text-sm text-gray-500 dark:text-gray-400 transition-all bg-gray-50 dark:bg-fintech-card/50 px-1 ml-[-4px] pointer-events-none peer-focus:-top-2.5 peer-focus:text-xs peer-focus:text-emerald-600 dark:peer-focus:text-neon-emerald peer-[:not(:placeholder-shown)]:-top-2.5 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:text-emerald-600 dark:peer-[:not(:placeholder-shown)]:text-neon-emerald">
                                     {t('password')}
                                 </label>
                                 <button
                                     type="button"
                                     onClick={() => setShowPassword(!showPassword)}
-                                    className="absolute right-3 top-3.5 text-gray-400 hover:text-cyan-600 dark:hover:text-neon-cyan transition-colors"
+                                    className="absolute right-3 top-3.5 text-gray-400 hover:text-emerald-600 dark:hover:text-neon-emerald transition-colors"
                                 >
                                     <AnimatePresence mode="wait" initial={false}>
                                         <motion.div
@@ -219,7 +219,7 @@ const AuthPage = () => {
 
                             {isLogin && (
                                 <div className="flex justify-end">
-                                    <a href="#" className="text-sm text-cyan-600 dark:text-neon-cyan/80 hover:text-cyan-500 dark:hover:text-neon-cyan transition-colors">
+                                    <a href="#" className="text-sm text-emerald-600 dark:text-neon-emerald/80 hover:text-emerald-500 dark:hover:text-neon-emerald transition-colors">
                                         {t('forgot_password')}
                                     </a>
                                 </div>
@@ -228,7 +228,7 @@ const AuthPage = () => {
                             <button
                                 type="submit"
                                 disabled={isLoading}
-                                className="w-full glass-btn py-3 rounded-xl font-semibold text-cyan-900 dark:text-white flex items-center justify-center gap-2 group relative overflow-hidden"
+                                className="w-full glass-btn py-3 rounded-xl font-semibold text-emerald-900 dark:text-white flex items-center justify-center gap-2 group relative overflow-hidden"
                             >
                                 {isLoading ? (
                                     <div className="h-5 w-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
@@ -259,7 +259,7 @@ const AuthPage = () => {
                             {isLogin ? t('dont_have_account') : t('already_have_account')} {' '}
                             <button
                                 onClick={toggleMode}
-                                className="text-cyan-600 dark:text-neon-cyan hover:underline font-medium"
+                                className="text-emerald-600 dark:text-neon-emerald hover:underline font-medium"
                             >
                                 {isLogin ? t('sign_up') : t('log_in')}
                             </button>

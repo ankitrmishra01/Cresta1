@@ -21,7 +21,7 @@ const Typewriter = ({ text, delay = 50 }) => {
             <motion.span
                 animate={{ opacity: [0, 1, 0] }}
                 transition={{ duration: 0.8, repeat: Infinity, ease: "linear" }}
-                className="inline-block w-[3px] h-[0.8em] bg-cyan-600 dark:bg-neon-cyan ml-1 align-middle"
+                className="inline-block w-[3px] h-[0.8em] bg-emerald-600 dark:bg-neon-emerald ml-1 align-middle"
             />
         </span>
     );

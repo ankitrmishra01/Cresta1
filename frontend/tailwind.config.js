@@ -11,8 +11,7 @@ export default {
                 'fintech-bg': '#0B1120',
                 'fintech-card': '#1E293B',
                 'fintech-primary': '#0F172A',
-                'neon-cyan': '#22D3EE',
-                'neon-emerald': '#34D399',
+                'neon-emerald': '#10B981',
                 'neon-blue': '#3B82F6',
             },
             fontFamily: {

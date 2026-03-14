@@ -141,12 +141,12 @@ const MarketsPage = () => {
                         <p className="text-gray-500 dark:text-gray-400">{t('markets_subtitle')}</p>
 
                         {/* Search Status */}
-                        {searchLoading && <p className="text-cyan-600 mt-2 animate-pulse">{t('searching_for')} "{searchQuery}"...</p>}
+                        {searchLoading && <p className="text-emerald-600 mt-2 animate-pulse">{t('searching_for')} "{searchQuery}"...</p>}
                         {searchError && <p className="text-red-500 mt-2">Error: {searchError}</p>}
 
                         {/* Main Status Indicators */}
                         {loading && !indicesData.length && (
-                            <div className="flex items-center gap-2 mt-2 text-cyan-600 dark:text-neon-cyan animate-pulse">
+                            <div className="flex items-center gap-2 mt-2 text-emerald-600 dark:text-neon-emerald animate-pulse">
                                 <span className="w-2 h-2 bg-current rounded-full"></span>
                                 <span className="text-sm font-medium">Fetching live market data...</span>
                             </div>
@@ -171,16 +171,16 @@ const MarketsPage = () => {
                     <motion.div
                         initial={{ opacity: 0, y: -20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        className="glass-panel p-6 rounded-2xl border border-cyan-500/30 bg-cyan-50/10 dark:bg-cyan-900/10 backdrop-blur-xl mb-6 relative overflow-hidden"
+                        className="glass-panel p-6 rounded-2xl border border-emerald-500/30 bg-emerald-50/10 dark:bg-emerald-900/10 backdrop-blur-xl mb-6 relative overflow-hidden"
                     >
                         <div className="absolute top-0 right-0 p-4 opacity-10">
-                            <TrendingUp className="w-24 h-24 text-cyan-500" />
+                            <TrendingUp className="w-24 h-24 text-emerald-500" />
                         </div>
                         <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{t('search_result')}</h2>
                         <div className="flex items-center gap-8">
                             <div>
                                 <div className="text-sm text-gray-500 dark:text-gray-400">{t('symbol')}</div>
-                                <div className="text-2xl font-bold text-cyan-600 dark:text-neon-cyan">{searchResult.symbol}</div>
+                                <div className="text-2xl font-bold text-emerald-600 dark:text-neon-emerald">{searchResult.symbol}</div>
                                 <div className="text-sm text-gray-600 dark:text-gray-300">{searchResult.name}</div>
                             </div>
                             <div>
@@ -265,13 +265,13 @@ const MarketsPage = () => {
                             <div className="p-4 border-b border-gray-200 dark:border-white/10 flex gap-6">
                                 <button
                                     onClick={() => setSelectedTab('gainers')}
-                                    className={`pb-2 text-sm font-semibold transition-colors border-b-2 ${selectedTab === 'gainers' || selectedTab === 'overview' ? 'text-cyan-600 dark:text-neon-cyan border-cyan-600 dark:border-neon-cyan' : 'text-gray-500 border-transparent hover:text-gray-700 dark:hover:text-gray-300'}`}
+                                    className={`pb-2 text-sm font-semibold transition-colors border-b-2 ${selectedTab === 'gainers' || selectedTab === 'overview' ? 'text-emerald-600 dark:text-neon-emerald border-emerald-600 dark:border-neon-emerald' : 'text-gray-500 border-transparent hover:text-gray-700 dark:hover:text-gray-300'}`}
                                 >
                                     {t('top_gainers')}
                                 </button>
                                 <button
                                     onClick={() => setSelectedTab('losers')}
-                                    className={`pb-2 text-sm font-semibold transition-colors border-b-2 ${selectedTab === 'losers' ? 'text-cyan-600 dark:text-neon-cyan border-cyan-600 dark:border-neon-cyan' : 'text-gray-500 border-transparent hover:text-gray-700 dark:hover:text-gray-300'}`}
+                                    className={`pb-2 text-sm font-semibold transition-colors border-b-2 ${selectedTab === 'losers' ? 'text-emerald-600 dark:text-neon-emerald border-emerald-600 dark:border-neon-emerald' : 'text-gray-500 border-transparent hover:text-gray-700 dark:hover:text-gray-300'}`}
                                 >
                                     {t('top_losers')}
                                 </button>
@@ -313,19 +313,19 @@ const MarketsPage = () => {
                     <div className="space-y-6">
                         <div className="glass-panel p-6 rounded-2xl border border-gray-200 dark:border-white/10 bg-white/50 dark:bg-fintech-card/50">
                             <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
-                                <Clock className="w-4 h-4 text-cyan-500" /> {t('market_news')}
+                                <Clock className="w-4 h-4 text-emerald-500" /> {t('market_news')}
                             </h3>
                             <div className="space-y-4">
                                 {[1, 2, 3].map((i) => (
                                     <div key={i} className="group cursor-pointer">
                                         <div className="text-xs text-gray-400 mb-1">2 hours ago</div>
-                                        <h4 className="text-sm font-medium text-gray-800 dark:text-gray-200 group-hover:text-cyan-600 dark:group-hover:text-neon-cyan transition-colors">
+                                        <h4 className="text-sm font-medium text-gray-800 dark:text-gray-200 group-hover:text-emerald-600 dark:group-hover:text-neon-emerald transition-colors">
                                             RBI expected to hold rates steady in upcoming monetary policy meeting.
                                         </h4>
                                     </div>
                                 ))}
                             </div>
-                            <button className="w-full mt-6 py-2 text-sm text-cyan-600 dark:text-neon-cyan font-medium border border-cyan-600/30 dark:border-neon-cyan/30 rounded-lg hover:bg-cyan-50 dark:hover:bg-neon-cyan/10 transition-colors">
+                            <button className="w-full mt-6 py-2 text-sm text-emerald-600 dark:text-neon-emerald font-medium border border-emerald-600/30 dark:border-neon-emerald/30 rounded-lg hover:bg-emerald-50 dark:hover:bg-neon-emerald/10 transition-colors">
                                 {t('read_more')}
                             </button>
                         </div>
