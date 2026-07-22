@@ -1,0 +1,46 @@
+# ===========================================
+# backend/ — Django API Dependencies
+# ===========================================
+# Core web framework and API dependencies only.
+# ML dependencies are in mlmodel/requirements.txt
+# and installed separately in the Dockerfile.
+# ===========================================
+
+# --- Django & DRF ---
+Django==6.0.1
+djangorestframework==3.16.1
+djangorestframework-simplejwt>=5.0.0
+django-cors-headers>=4.0.0
+
+# --- Chatbot AI ---
+langchain
+langchain-groq
+
+# --- Database & Cache ---
+psycopg2-binary>=2.9.0
+redis>=5.0.0
+
+# --- Task Queue ---
+celery>=5.0.0
+
+# --- Static Files ---
+whitenoise>=6.0.0
+
+# --- Auth ---
+python-dotenv
+
+# --- Standard Library Extensions ---
+asgiref==3.11.0
+sqlparse==0.5.5
+typing_extensions==4.15.0
+pytz==2025.2
+python-dateutil==2.9.0.post0
+six==1.17.0
+tzdata==2025.3
+
+# --- HTTP ---
+requests==2.32.5
+certifi==2026.1.4
+charset-normalizer==3.4.4
+idna==3.11
+urllib3==2.6.3
