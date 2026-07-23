@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* ─────────────────────────────────────────────────────────
+     DARK THEME (default — applied when .dark is present)
+  ───────────────────────────────────────────────────────── */
+  :root,
+  html.dark {
+    --app-bg:           #000000;
+    --app-bg-secondary: #080808;
+    --app-surface:      #0a0a0a;
+    --app-surface-2:    #111111;
+    --app-border:       #222222;
+    --app-border-2:     #1a1a1a;
+    --app-text:         #ededed;
+    --app-text-2:       #a3a3a3;
+    --app-heading:      #ffffff;
+    --app-muted:        #6b7280;
+    --app-input-bg:     #0f0f0f;
+    --app-accent:       #4ade80;
+    --app-accent-bg:    rgba(74,222,128,0.1);
+    --shadow-sm:        none;
+    --shadow-md:        none;
+    --shadow-panel:     none;
+  }
+
+  /* ─────────────────────────────────────────────────────────
+     LIGHT THEME
+  ───────────────────────────────────────────────────────── */
+  html:not(.dark) {
+    --app-bg:           #f0f4f9;
+    --app-bg-secondary: #e6ecf4;
+    --app-surface:      #ffffff;
+    --app-surface-2:    #f8fafc;
+    --app-border:       #d1dce8;
+    --app-border-2:     #e2eaf3;
+    --app-text:         #1e293b;
+    --app-text-2:       #334155;
+    --app-heading:      #0f172a;
+    --app-muted:        #64748b;
+    --app-input-bg:     #ffffff;
+    --app-accent:       #059669;
+    --app-accent-bg:    #d1fae5;
+    --shadow-sm:        0 1px 3px rgba(15,23,42,0.06), 0 1px 2px rgba(15,23,42,0.04);
+    --shadow-md:        0 4px 12px rgba(15,23,42,0.08), 0 2px 4px rgba(15,23,42,0.05);
+    --shadow-panel:     0 2px 8px rgba(15,23,42,0.07), 0 1px 2px rgba(15,23,42,0.04);
+  }
+
+  html { scroll-behavior: smooth; }
+  html.dark     { color-scheme: dark; }
+  html:not(.dark) { color-scheme: light; }
+
+  body {
+    @apply font-sans antialiased;
+    font-variant-numeric: tabular-nums;
+    color: var(--app-text);
+    background-color: var(--app-bg);
+    transition: background-color 0.25s ease, color 0.2s ease;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply tracking-tight;
+    color: var(--app-heading);
+  }
+}
+
+@layer components {
+  /* ── Panels / Cards ─────────────────────────────────── */
+  /*  Only applied to elements that explicitly add this class.
+      Does NOT override hardcoded bg-[#0A0A0A] etc on dark pages. */
+  .premium-panel,
+  .bento-panel {
+    @apply border rounded-2xl transition-all duration-300;
+    background-color: var(--app-surface);
+    border-color: var(--app-border);
+    box-shadow: var(--shadow-panel);
+  }
+
+  /* Override bento-panel glow effects for light mode */
+  html:not(.dark) .bento-panel .absolute.inset-0.bg-gradient-to-br {
+    display: none;
+  }
+
+  /* ── Inputs ─────────────────────────────────────────── */
+  .premium-input,
+  .bento-input {
+    @apply w-full px-4 py-3 border rounded-xl text-sm transition-all focus:outline-none focus:ring-2 focus:ring-emerald-500/30 focus:border-emerald-500/50;
+    background-color: var(--app-input-bg);
+    border-color: var(--app-border);
+    color: var(--app-text);
+  }
+
+  /* ── Buttons ─────────────────────────────────────────── */
+  .premium-button,
+  .vercel-button {
+    @apply px-5 py-2.5 rounded-full font-semibold text-[13px] transition-all flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed tracking-wide;
+  }
+
+  .premium-button-primary,
+  .vercel-button-primary {
+    @apply bg-white text-black hover:bg-gray-100 hover:scale-[1.02] active:scale-[0.98] shadow-lg;
+  }
+
+  .premium-button-secondary,
+  .vercel-button-secondary {
+    @apply bg-white/5 text-white border border-white/10 hover:bg-white/10 hover:border-white/20 active:scale-[0.98];
+  }
+
+  /* ── App-surface utility (used in dashboard layout) ── */
+  .app-surface-bg {
+    background-color: var(--app-surface);
+    border-color: var(--app-border);
+  }
+}
+
+/* ── Scrollbar ──────────────────────────────────────────── */
+.custom-scrollbar::-webkit-scrollbar { width: 4px; height: 4px; }
+.custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  border-radius: 9999px;
+  background-color: var(--app-border);
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: var(--app-muted);
+}
+
+@layer utilities {
+  /* App-aware utility classes */
+  .app-bg      { background-color: var(--app-bg) !important; }
+  .app-surface { background-color: var(--app-surface) !important; }
+  .app-border  { border-color: var(--app-border) !important; }
+  .app-text    { color: var(--app-text) !important; }
+  .app-muted   { color: var(--app-muted) !important; }
+  .app-heading { color: var(--app-heading) !important; }
+
+  .hover-glow { @apply transition-all duration-300 ease-out; }
+  html.dark      .hover-glow:hover { box-shadow: 0 0 20px rgba(255,255,255,0.05); }
+  html:not(.dark).hover-glow:hover { box-shadow: 0 4px 20px rgba(5,150,105,0.12); }
+
+  .hover-lift { @apply hover:-translate-y-1 transition-all duration-300; }
+  html.dark       .hover-lift { @apply hover:shadow-2xl hover:shadow-black/50; }
+  html:not(.dark) .hover-lift { @apply hover:shadow-xl hover:shadow-slate-200/80; }
+}
