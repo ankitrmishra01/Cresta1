@@ -1,0 +1,36 @@
+# ===========================================
+# mlmodel/ — ML & Data Science Dependencies
+# ===========================================
+# These are the Python packages required by the
+# recommender engine (AttentionLSTM, XGBoost,
+# ARIMA, FinBERT sentiment analysis).
+#
+# Installed separately from backend/requirements.txt
+# to allow independent version management.
+# ===========================================
+
+# --- Deep Learning ---
+torch
+transformers           # FinBERT (ProsusAI/finbert)
+
+# --- Classical ML ---
+xgboost
+scikit-learn>=1.8.0
+pmdarima               # Auto-ARIMA
+
+# --- Data & Numerics ---
+numpy>=2.4.0
+pandas>=3.0.0
+scipy>=1.17.0
+joblib>=1.5.0
+
+# --- Data Fetching ---
+yfinance>=1.1.0
+beautifulsoup4>=4.14.0
+requests>=2.32.0
+
+# --- Experiment Tracking ---
+mlflow
+
+# --- Utilities ---
+python-dotenv
