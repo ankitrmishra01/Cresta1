@@ -1,0 +1,104 @@
+services:
+  # --- PostgreSQL Database ---
+  db:
+    image: postgres:16-alpine
+    restart: always
+    environment:
+      POSTGRES_DB: cresta
+      POSTGRES_USER: cresta
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-cresta_secure_pw}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U cresta -d cresta" ]
+      interval: 3s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
+
+  # --- Redis (Cache + Celery Broker) ---
+  redis:
+    image: redis:7-alpine
+    restart: always
+    healthcheck:
+      test: [ "CMD", "redis-cli", "ping" ]
+      interval: 3s
+      timeout: 3s
+      retries: 10
+
+  # --- Django Backend (Gunicorn) ---
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    restart: always
+    env_file: .env
+    environment:
+      DATABASE_URL: postgres://cresta:${DB_PASSWORD:-cresta_secure_pw}@db:5432/cresta
+      REDIS_URL: redis://redis:6379/0
+    ports:
+      - "8000:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    volumes:
+      - model_data:/app/mlmodel/recommender/saved_models
+    command: >
+      sh -c "python manage.py migrate --noinput &&
+             python manage.py collectstatic --noinput &&
+             gunicorn robo_advisor.wsgi:application --bind 0.0.0.0:8000 --workers 3 --timeout 120"
+
+  # --- Celery Worker (ML Tasks) ---
+  celery_worker:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    restart: always
+    env_file: .env
+    environment:
+      DATABASE_URL: postgres://cresta:${DB_PASSWORD:-cresta_secure_pw}@db:5432/cresta
+      REDIS_URL: redis://redis:6379/0
+      CELERY_BROKER_URL: redis://redis:6379/1
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    volumes:
+      - model_data:/app/mlmodel/recommender/saved_models
+    command: python -m celery -A robo_advisor worker -l info --concurrency=2
+
+  # --- Celery Beat (Scheduled Tasks) ---
+  celery_beat:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    restart: always
+    env_file: .env
+    environment:
+      DATABASE_URL: postgres://cresta:${DB_PASSWORD:-cresta_secure_pw}@db:5432/cresta
+      REDIS_URL: redis://redis:6379/0
+      CELERY_BROKER_URL: redis://redis:6379/1
+    depends_on:
+      redis:
+        condition: service_healthy
+    command: python -m celery -A robo_advisor beat -l info
+
+  # --- Frontend (Nginx + React) ---
+  frontend:
+    build:
+      context: ./frontend
+      args:
+        VITE_API_BASE: ${VITE_API_BASE:-/api}
+        VITE_GOOGLE_CLIENT_ID: ${VITE_GOOGLE_CLIENT_ID:-}
+    restart: always
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+
+volumes:
+  postgres_data:
+  model_data:

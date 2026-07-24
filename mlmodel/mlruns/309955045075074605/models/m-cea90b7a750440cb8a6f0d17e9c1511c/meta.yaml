@@ -1,0 +1,10 @@
+artifact_location: file:C:/Users/om231/OneDrive/Desktop/Projects/Cresta/mlruns/309955045075074605/models/m-cea90b7a750440cb8a6f0d17e9c1511c/artifacts
+creation_timestamp: 1772113995752
+experiment_id: '309955045075074605'
+last_updated_timestamp: 1772114005586
+model_id: m-cea90b7a750440cb8a6f0d17e9c1511c
+model_type: null
+name: random_forest_model
+source_run_id: 063988241a86455e88623638a8bda4fb
+status: 2
+status_message: null

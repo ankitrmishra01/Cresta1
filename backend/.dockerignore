@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.git/
+.venv/
+.env
+db.sqlite3
+mlruns/
+saved_models/
+*.pkl
+node_modules/
